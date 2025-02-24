@@ -1,0 +1,14 @@
+{
+  "name": "Yauhen",
+  "age": 32,
+  "family": {
+    "wife": {
+
+    },
+    "children": {
+
+    }
+  },
+  "isMarried": true,
+  "cars": ["toyota", "bmw"]
+}
