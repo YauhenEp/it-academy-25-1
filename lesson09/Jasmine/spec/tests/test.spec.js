@@ -1,5 +1,4 @@
-import { filterLongWords, reverseWord, countPropertyValues } from "../task.js";
-import { expect } from 'chai';
+const { filterLongWords, reverseWord, countPropertyValues } = require("../../task.js");
 
 describe('Test functions', () => {
 
@@ -7,7 +6,8 @@ describe('Test functions', () => {
     {data: "Hello World", expected: "olleH dlroW"},
     {data: "Wow Wow", expected: "woW woW"},
   ];
-  before(() => {
+
+  beforeAll(() => {
     console.log('Before all tests')
   })
 
@@ -16,28 +16,29 @@ describe('Test functions', () => {
   })
 
   it('should be filtered data with length more than 4', async () => {
+    const { expect } = require('chai');
     const result = await filterLongWords(["Hello", "Metro", 'New'], 4)
     expect(result).to.deep.equal(["Hello", "Metro"]);
   })
 
   it('should correct reverse one word', async () => {
     const result = reverseWord("Hello");
-    expect(result).to.equal("olleHfgf");
+    expect(result).toEqual("olleH");
   })
 
   it('should correct reverse two word', async () => {
     const result = reverseWord("Hello World");
-    expect(result).to.equal("olleH dlroW");
+    expect(result).toEqual("olleH dlroW");
   })
 
   testCases.forEach(testCase => {
     it(`should be correct reverse word ${testCase.expected}`, async () => {
       const result = reverseWord(testCase.data);
-      expect(result).to.equal(testCase.expected);
+      expect(result).toEqual(testCase.expected);
     })
   })
 
-  after(() => {
+  afterAll(() => {
     console.log('After all tests')
   })
 
