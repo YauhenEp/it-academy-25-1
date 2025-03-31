@@ -1,6 +1,5 @@
 import { test, expect } from '@playwright/test';
 
-
 test.describe('Onliner test', async () => {
 
   test('should get error notification with wrong credentials', async ({page}) => {
