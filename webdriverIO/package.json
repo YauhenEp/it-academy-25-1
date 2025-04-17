@@ -6,10 +6,13 @@
     "@wdio/cli": "^9.12.1",
     "@wdio/local-runner": "^9.12.1",
     "@wdio/mocha-framework": "^9.12.1",
-    "@wdio/spec-reporter": "^9.11.0"
+    "@wdio/spec-reporter": "^9.11.0",
+    "eslint": "^9.24.0",
+    "prettier": "^3.5.3"
   },
   "scripts": {
-    "wdio": "wdio run ./wdio.conf.js"
+    "wdio": "wdio run ./wdio.conf.js",
+    "eslint": "eslint --debug ./ --fix"
   },
   "dependencies": {
     "chai": "^5.2.0"

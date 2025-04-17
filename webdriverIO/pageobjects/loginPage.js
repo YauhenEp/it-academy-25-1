@@ -1,4 +1,4 @@
-import { Base } from './Base';
+import { Base } from "./Base";
 
 class LoginPage extends Base {
   get usernameField() {
@@ -6,17 +6,26 @@ class LoginPage extends Base {
   }
 
   get passwordField() {
-    return $('[name="password"]')
+    return $('[name="password"]');
   }
 
   get loginButton() {
-    return $('.orangehrm-login-button')
+    return $(".orangehrm-login-button");
   }
 
+  /**
+   * @returns {*}
+   */
   get errorNotification() {
-    return $('.oxd-alert-content-text')
+    return $(".oxd-alert-content-text");
   }
 
+  /**
+   *
+   * @param username
+   * @param password
+   * @returns {Promise<void>}
+   */
   async login(username, password) {
     await this.usernameField.waitForDisplayed();
     await this.usernameField.setValue(username);
