@@ -42,4 +42,9 @@ describe('Api test', () => {
     const result = await validator.validate(responsePost.data, usersSchema)
     await expect(result.valid).toEqual(true);
   })
+
+  test('GET should be able to list of users', async () => {
+    await expect(responseGet.status).toEqual(200);
+    await expect(responseGet.data).toBeTruthy();
+  })
 });
